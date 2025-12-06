@@ -1,18 +1,16 @@
 // Funcionalidade de navegação
 function mostrarSecao(idSecao) {
-    // Esconder todas as seções
     const secoes = document.querySelectorAll('.secao-conteudo');
     secoes.forEach(secao => {
         secao.classList.remove('ativo');
     });
     
-    // Mostrar seção selecionada
     const secaoAlvo = document.getElementById(idSecao);
     if (secaoAlvo) {
         secaoAlvo.classList.add('ativo');
     }
     
-    // Atualizar item de navegação ativo
+
     const itensNavegacao = document.querySelectorAll('.item-navegacao');
     itensNavegacao.forEach(item => {
         item.classList.remove('ativo');
@@ -20,7 +18,6 @@ function mostrarSecao(idSecao) {
     
     evento.target.closest('.item-navegacao').classList.add('ativo');
     
-    // Mostrar notificação
     mostrarNotificacao(`Navegando para ${idSecao.charAt(0).toUpperCase() + idSecao.slice(1)}`);
 }
 
@@ -41,7 +38,6 @@ function lidarComEditarPerfil() {
     const entradas = document.querySelectorAll('.formulario-perfil input');
     entradas.forEach(entrada => {
         entrada.focus();
-        // Focar na primeira entrada
     });
 }
 
@@ -68,7 +64,7 @@ function lidarComSalvarAlteracoes(evento) {
     }, 500);
 }
 
-// Ajustes - Alterar Senha
+// Ajustes 
 function lidarComAlterarSenha() {
     const conteudoModal = `
         <h2>Alterar Senha</h2>
@@ -410,7 +406,6 @@ function fecharModal() {
     document.getElementById('modal').style.display = 'none';
 }
 
-// Fechar modal ao clicar fora
 window.onclick = function(evento) {
     const modal = document.getElementById('modal');
     if (evento.target == modal) {
@@ -420,7 +415,6 @@ window.onclick = function(evento) {
 
 // notificações
 function mostrarNotificacao(mensagem, tipo = 'info') {
-    // Remover notificação existente se houver
     const notificacaoExistente = document.querySelector('.notificacao');
     if (notificacaoExistente) {
         notificacaoExistente.remove();
@@ -447,7 +441,6 @@ function mostrarNotificacao(mensagem, tipo = 'info') {
     
     document.body.appendChild(notificacao);
     
-    // Remover após 3 segundos
     setTimeout(() => {
         notificacao.style.animation = 'deslizarSaida 0.3s ease';
         setTimeout(() => {
