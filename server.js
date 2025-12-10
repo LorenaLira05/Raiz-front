@@ -101,8 +101,8 @@ app.post('/api/estoque', (req, res) => {
                 }
                 
                 console.log('Item inserido no MySQL');
-                console.log('📊 ID inserido:', insertResults.insertId);
-                console.log('📊 Rows afetadas:', insertResults.affectedRows);
+                console.log('ID inserido:', insertResults.insertId);
+                console.log('Rows afetadas:', insertResults.affectedRows);
                 
                 // 3. Retorna o item inserido
                 const novoItem = {
@@ -125,7 +125,7 @@ app.post('/api/estoque', (req, res) => {
 // 3. PUT atualizar item
 app.put('/api/estoque/:id', (req, res) => {
     const id = req.params.id;
-    console.log(`📝 PUT /api/estoque/${id}:`, req.body);
+    console.log(`PUT /api/estoque/${id}:`, req.body);
     
     const { tipo, variedade, quantidade, lote, validade } = req.body;
     
@@ -139,17 +139,17 @@ app.put('/api/estoque/:id', (req, res) => {
         [tipo, variedade, quantidade, lote, validade, id], 
         (err, results) => {
             if (err) {
-                console.error('❌ Erro ao atualizar item:', err.message);
+                console.error('Erro ao atualizar item:', err.message);
                 return res.status(500).json({ error: 'Erro no banco de dados' });
             }
             
-            console.log('📊 Resultado UPDATE:', results);
+            console.log('Resultado UPDATE:', results);
             
             if (results.affectedRows === 0) {
                 return res.status(404).json({ error: 'Item não encontrado' });
             }
             
-            console.log(`✅ Item ${id} atualizado`);
+            console.log(`Item ${id} atualizado`);
             res.json({ 
                 success: true, 
                 message: 'Item atualizado', 
@@ -163,7 +163,7 @@ app.put('/api/estoque/:id', (req, res) => {
 // 4. DELETE excluir item
 app.delete('/api/estoque/:id', (req, res) => {
     const id = req.params.id;
-    console.log(`🗑️  DELETE /api/estoque/${id}`);
+    console.log(`DELETE /api/estoque/${id}`);
     
     const sql = 'DELETE FROM estoque WHERE id = ?';
     
@@ -173,13 +173,13 @@ app.delete('/api/estoque/:id', (req, res) => {
             return res.status(500).json({ error: 'Erro no banco de dados' });
         }
         
-        console.log('📊 Resultado DELETE:', results);
+        console.log('Resultado DELETE:', results);
         
         if (results.affectedRows === 0) {
             return res.status(404).json({ error: 'Item não encontrado' });
         }
         
-        console.log(`✅ Item ${id} excluído`);
+        console.log(`Item ${id} excluído`);
         res.json({ 
             success: true, 
             message: 'Item excluído', 
@@ -189,8 +189,7 @@ app.delete('/api/estoque/:id', (req, res) => {
     });
 });
 
-// ========== ROTAS DAS PÁGINAS ==========
-
+//rotas para páginas HTML
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "public", 'index.html'));
 });
@@ -227,28 +226,28 @@ app.get('/painel', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'painel.html'));
 });
 
-// ========== INICIAR SERVIDOR COM VERIFICAÇÃO ==========
+//inicia o servidor após verificar o MySQL
 
 async function iniciarServidor() {
-    console.log('🚀 Iniciando servidor...');
+    console.log('Iniciando servidor...');
     
     // Testa conexão MySQL
     const mysqlOk = await verificarConexaoMySQL();
     
     if (!mysqlOk) {
-        console.log('⚠️  AVISO: MySQL pode não estar funcionando corretamente');
-        console.log('📌 A API retornará erro 500 nas requisições');
+        console.log('AVISO: MySQL pode não estar funcionando corretamente');
+        console.log('A API retornará erro 500 nas requisições');
     }
     
     // Inicia servidor
     app.listen(PORT, () => {
-        console.log(`✅ Servidor rodando em http://localhost:${PORT}`);
-        console.log(`📊 API: http://localhost:${PORT}/api/estoque`);
-        console.log(`📄 Estoque: http://localhost:${PORT}/estoque`);
-        console.log(`🐬 MySQL: ${mysqlOk ? '✅ Conectado' : '❌ Problemas'}`);
+        console.log(`Servidor rodando em http://localhost:${PORT}`);
+        console.log(`API: http://localhost:${PORT}/api/estoque`);
+        console.log(`Estoque: http://localhost:${PORT}/estoque`);
+        console.log(`MySQL: ${mysqlOk ? 'Conectado' : 'Problemas'}`);
         
         if (!mysqlOk) {
-            console.log('\n📌 Para diagnosticar:');
+            console.log('\nPara diagnosticar:');
             console.log('1. Verifique se MySQL está rodando');
             console.log('2. Teste: node -e "require(\'./db\').query(\'SELECT 1\', console.log)"');
             console.log('3. Verifique o arquivo .env');
@@ -258,15 +257,15 @@ async function iniciarServidor() {
 
 // Inicia o servidor
 iniciarServidor().catch(err => {
-    console.error('❌ Erro fatal ao iniciar servidor:', err);
+    console.error('Erro ao iniciar servidor:', err);
     process.exit(1);
 });
 
 // Tratamento de erros não capturados
 process.on('uncaughtException', (err) => {
-    console.error('❌ Erro não capturado:', err);
+    console.error('Erro não capturado:', err);
 });
 
 process.on('unhandledRejection', (reason, promise) => {
-    console.error('❌ Promise rejeitada não tratada:', reason);
+    console.error('Promise rejeitada não tratada:', reason);
 });
