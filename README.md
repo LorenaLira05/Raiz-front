@@ -9,27 +9,27 @@ Um sistema web para gestão de estoque de sementes desenvolvido para o Instituto
 ## ⚠️ **IMPORTANTE - OBSERVAÇÃO SOBRE O CÓDIGO**
 A integração completa MySQL está implementada apenas no módulo de estoque. Devido ao tempo disponível para desenvolvimento, os outros arquivos são apenas front-end.
 
-## ✨ **Funcionalidades Principais**
+##  **Funcionalidades Principais**
 
-### 📦 **Gestão de Estoque (FULL CRUD - Com MySQL)**
-- ✅ **BACKEND INTEGRADO** - Conexão real com MySQL
-- ✅ Cadastro de sementes (tipo, variedade, quantidade, lote, validade)
-- ✅ Visualização em tabela com dados do banco
-- ✅ Edição e exclusão de itens no MySQL
-- ✅ Controle de validade e lotes
-- ✅ Estatísticas em tempo real
+###  **Gestão de Estoque (FULL CRUD - Com MySQL)**
+- **BACKEND INTEGRADO** - Conexão real com MySQL
+- Cadastro de sementes (tipo, variedade, quantidade, lote, validade)
+- Visualização em tabela com dados do banco
+- Edição e exclusão de itens no MySQL
+- Controle de validade e lotes
+- Estatísticas em tempo real
 
-### 🎯 **Módulos do Sistema (FRONT-END APENAS)**
-- **👤 Perfil do Usuário** - Interface visual apenas
-- **⚙️ Ajustes** - Interface visual apenas  
-- **🛒 Pedidos** - Interface visual apenas
-- **📊 Relatórios** - Interface visual apenas
-- **💬 Mensagens** - Interface visual apenas
-- **🚚 Fornecedores** - Interface visual apenas
-- **📈 Transparência** - Interface visual apenas
-- **📱 Painel** - Interface visual apenas
+### **Módulos do Sistema (FRONT-END APENAS)**
+- **Perfil do Usuário** - Interface visual apenas
+- **Ajustes** - Interface visual apenas  
+- **Pedidos** - Interface visual apenas
+- **Relatórios** - Interface visual apenas
+- **Mensagens** - Interface visual apenas
+- **Fornecedores** - Interface visual apenas
+- **Transparência** - Interface visual apenas
+- **Painel** - Interface visual apenas
 
-## 🔧 **Arquivos com Integração Real**
+##  **Arquivos com Integração Real**
 
 | Arquivo | Tipo | Banco de Dados | Status |
 |---------|------|----------------|---------|
@@ -39,7 +39,7 @@ A integração completa MySQL está implementada apenas no módulo de estoque. D
 | `estoque.html` | Frontend | ✅ MySQL | **Implementado** |
 | Outras páginas HTML | Frontend | ❌ Mock Data | Somente UI |
 
-## 🛠 **Tecnologias Utilizadas**
+## **Tecnologias Utilizadas**
 
 ### **Backend (Implementado para Estoque)**
 - ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) Node.js + Express
@@ -51,31 +51,31 @@ A integração completa MySQL está implementada apenas no módulo de estoque. D
 - ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) CSS3 Moderno
 - ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) JavaScript Vanilla
 
-## 📁 **Estrutura do Projeto - Status Real**
+## **Estrutura do Projeto - Status Real**
 
 ```
 sistema-gestao-sementes/
 ├── 📁 public/                          # FRONTEND COMPLETO
-│   ├── 📄 index.html                   # ✅ Página principal (UI apenas)
-│   ├── 📄 painel.html                  # ⚠️  painel (UI apenas)
-│   ├── 📄 estoque.html                 # ✅ Gestão de estoque (COM MySQL)
-│   ├── 📄 pedidos.html                 # ⚠️  Gestão de pedidos (UI apenas)
-│   ├── 📄 relatorios.html              # ⚠️  Relatórios (UI apenas)
-│   ├── 📄 fornecedores.html            # ⚠️  Fornecedores (UI apenas)
-│   ├── 📄 ajustes.html                 # ⚠️  Ajustes (UI apenas)
-│   ├── 📄 mensagens.html               # ⚠️  Mensagens (UI apenas)
-│   ├── 📄 transparencia.html           # ⚠️  Transparência (UI apenas)
-│   ├── 📄 layout.html                  # ✅ Layout/template base
-│   ├── 📄 style.css                    # ✅ Estilos principais
-│   └── 📄 script.js                    # ✅ JavaScript (estoque: ✅ MySQL)
+│   ├── index.html                   # ✅ Página principal (UI apenas)
+│   ├── painel.html                  # ⚠️  painel (UI apenas)
+│   ├── estoque.html                 # ✅ Gestão de estoque (COM MySQL)
+│   ├── pedidos.html                 # ⚠️  Gestão de pedidos (UI apenas)
+│   ├── relatorios.html              # ⚠️  Relatórios (UI apenas)
+│   ├── fornecedores.html            # ⚠️  Fornecedores (UI apenas)
+│   ├── ajustes.html                 # ⚠️  Ajustes (UI apenas)
+│   ├── mensagens.html               # ⚠️  Mensagens (UI apenas)
+│   ├── transparencia.html           # ⚠️  Transparência (UI apenas)
+│   ├── layout.html                  # ✅ Layout/template base
+│   ├── style.css                    # ✅ Estilos principais
+│   └── script.js                    # ✅ JavaScript (estoque: ✅ MySQL)
 │                                        #                 (outros: ⚠️ Mock)
-├── 📄 server.js                        # ✅ Backend Node.js (COM MySQL para estoque)
-├── 📄 db.js                            # ✅ Conexão com MySQL (IMPLEMENTADO)
-├── 📄 package.json                     # ✅ Dependências do projeto
-└── 📄 README.md                        # ✅ Este arquivo
+├── server.js                        # ✅ Backend Node.js (COM MySQL para estoque)
+├── db.js                            # ✅ Conexão com MySQL (IMPLEMENTADO)
+├── package.json                     # ✅ Dependências do projeto
+└── README.md                        # ✅ Este arquivo
 ```
 
-## 🔌 **API Endpoints Implementados**
+## **API Endpoints Implementados**
 
 ### **✅ IMPLEMENTADO - Com MySQL**
 | Método | Endpoint | Descrição | Status |
@@ -93,7 +93,7 @@ sistema-gestao-sementes/
 | `GET` | `/api/relatorios` | Gerar relatórios | ❌ **Somente UI** |
 | `POST` | `/api/login` | Autenticar usuário | ❌ **Somente UI** |
 
-## 🚀 **Instalação e Configuração**
+##  **Instalação e Configuração**
 
 ### **⚠️ CONFIGURAÇÃO DO BANCO DE DADOS**
 
@@ -122,7 +122,7 @@ INSERT INTO estoque (codigo, tipo_semente, variedade, quantidade, lote, validade
 ('SEM-002', 'Feijão', 'Carioca', 450.00, 'L2025-002', '10/2026');
 ```
 
-## 📝 **Notas de Desenvolvimento**
+##  **Notas de Desenvolvimento**
 
 ### **O Que Está Realmente Implementado**
 1. **Módulo de Estoque**: CRUD completo com MySQL
@@ -145,7 +145,7 @@ INSERT INTO estoque (codigo, tipo_semente, variedade, quantidade, lote, validade
 // 4. Criar relacionamentos entre tabelas
 ```
 
-## 👨‍💻 **Para Desenvolvedores**
+## **Para Desenvolvedores**
 
 ### **Estrutura do Código MySQL (Única Implementada)**
 ```javascript
@@ -168,7 +168,7 @@ app.get('/api/pedidos', ...)      // ❌ Não implementado
 app.get('/api/fornecedores', ...) // ❌ Não implementado
 ```
 
-## 📊 **Status do Projeto**
+##  **Status do Projeto**
 
 | Módulo | Frontend | Backend | Banco de Dados | Status Geral |
 |--------|----------|---------|----------------|--------------|
@@ -178,7 +178,7 @@ app.get('/api/fornecedores', ...) // ❌ Não implementado
 | **Relatórios** | ✅ 100% | ❌ 0% | ❌ Nenhum | ⚠️  **SOMENTE UI** |
 | **Perfil** | ✅ 100% | ❌ 0% | ❌ Nenhum | ⚠️  **SOMENTE UI** |
 
-## 🎯 **Foco do Projeto**
+## **Foco do Projeto**
 
 Este projeto foi desenvolvido com foco em:
 1. **Demonstrar competência** em desenvolvimento full-stack
@@ -188,5 +188,5 @@ Este projeto foi desenvolvido com foco em:
 
 ---
 
-**Desenvolvido com os recursos e tempo disponíveis** ⏳  
+**Desenvolvido com os recursos e tempo disponíveis**   
 
