@@ -1,4 +1,4 @@
-## 🌱 **Sistema de Gestão de Sementes - Instituto Agronômico de Pernambuco**
+## **Sistema de Gestão de Sementes - Instituto Agronômico de Pernambuco**
 
 Um sistema web para gestão de estoque de sementes desenvolvido para o Instituto Agronômico de Pernambuco (IPA).
 
